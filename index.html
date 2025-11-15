@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Coupony: Your Hub for Amazing Deals & Promo Codes</title>
+    <meta name="description" content="Welcome to Coupony! Find the latest verified coupon codes, including exclusive Temu offers, product reviews, and saving tips to help you shop smarter.">
+    <meta name="keywords" content="Coupony, coupon codes, promo codes, discounts, deals, Temu coupon code 2025, savings">
+    
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Coupony: Your Hub for Amazing Deals & Promo Codes">
+    <meta property="og:description" content="Your exclusive gateway to massive savings! Get verified promo codes for Temu and more, plus expert shopping tips from Coupony.">
+    <meta property="og:image" content="https://picsum.photos/1200/630?random=1">
+    <meta property="og:url" content="[INSERT YOUR WEBSITE URL HERE]">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Coupony: Your Hub for Amazing Deals & Promo Codes">
+    <meta name="twitter:description" content="Don't miss out! Use our limited-time discount codes for your favorite stores and learn how to save big with Coupony.">
+    <meta name="twitter:image" content="https://picsum.photos/1200/600?random=2">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'temu-purple': '#5E17EB',
+              'temu-orange': '#F97B06',
+              'temu-yellow': '#FFD700',
+              'brand-black': '#1a1a1a',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Poppins', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles for Creative Design -->
+    <style>
+      :root {
+        --temu-purple: #5E17EB;
+        --temu-orange: #F97B06;
+        --temu-yellow: #FFD700;
+        --brand-black: #1a1a1a;
+        --brand-white: #ffffff;
+        --brand-light-gray: #f3f4f6;
+      }
+
+      /* Base neu-brutalism button/card style */
+      .neu-base {
+        border: 3px solid var(--brand-black);
+        transition: all 0.2s ease-in-out;
+      }
+      .neu-shadow {
+        box-shadow: 6px 6px 0 var(--brand-black);
+      }
+      .neu-shadow-sm {
+        box-shadow: 4px 4px 0 var(--brand-black);
+      }
+      .neu-shadow-hover:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 10px 10px 0 var(--brand-black);
+      }
+       .neu-shadow-sm-hover:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 var(--brand-black);
+      }
+
+      /* Specific color shadows */
+      .neu-shadow-yellow { box-shadow: 6px 6px 0 var(--temu-yellow); }
+      .neu-shadow-yellow-hover:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 10px 10px 0 var(--temu-yellow);
+      }
+      
+      /* Animation for elements fading in on scroll */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      
+      /* App Loader Styles */
+      .app-loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--brand-light-gray);
+        z-index: 9999;
+      }
+      .spinner {
+        border: 8px solid #e5e7eb; /* light gray */
+        border-top: 8px solid var(--temu-purple);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    
+    <!-- FAQ Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How do I use the Temu coupon code?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simply copy the code from our site, click 'Shop Now' to visit Temu, and paste the code at checkout to apply your 30% discount and claim your free gifts."
+        }
+      },{
+        "@type": "Question",
+        "name": "Is this Temu promo code valid for existing users?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This exclusive offer is primarily for new users to give them the best welcome experience. However, Temu occasionally extends offers to existing users, so it's always worth a try!"
+        }
+      },{
+        "@type": "Question",
+        "name": "What is the 100-item gift bundle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The gift bundle is a curated selection of popular items and coupons worth over $100. It's automatically added to your account after your first qualifying purchase using our promo code."
+        }
+      }]
+    }
+    </script>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50">
+    <div id="root">
+      <div class="app-loader">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </body>
+</html>

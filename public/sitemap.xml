@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>/</loc>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>/categories</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>/blogs</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>/about</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>/privacy-policy</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>/terms-of-service</loc>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>/blogs/how-to-sign-up-for-the-affiliate-program-at-temu</loc>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>/blogs/how-to-contact-temu-customer-service</loc>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>/blogs/how-to-become-a-temu-influencer</loc>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>/blogs/ultimate-gift-guide-2025</loc>
+        <priority>0.64</priority>
+    </url>
+</urlset>
