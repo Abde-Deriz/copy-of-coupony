@@ -39,6 +39,79 @@ const App: FC = () => {
         }
     }, []);
 
+    // --- SEO META TAGS ---
+    useEffect(() => {
+        const defaultMeta = {
+            title: "Coupony: Your Hub for Amazing Deals & Promo Codes",
+            description: "Welcome to Coupony! Find the latest verified coupon codes, including exclusive Temu offers, product reviews, and saving tips to help you shop smarter.",
+            keywords: "Coupony, coupon codes, promo codes, discounts, deals, Temu coupon code 2025, savings",
+            ogTitle: "Coupony: Your Hub for Amazing Deals & Promo Codes",
+            ogDescription: "Your exclusive gateway to massive savings! Get verified promo codes for Temu and more, plus expert shopping tips from Coupony.",
+            ogImage: "https://picsum.photos/1200/630?random=1",
+            twitterTitle: "Coupony: Your Hub for Amazing Deals & Promo Codes",
+            twitterDescription: "Don't miss out! Use our limited-time discount codes for your favorite stores and learn how to save big with Coupony.",
+            twitterImage: "https://picsum.photos/1200/600?random=2",
+        };
+
+        const updateMetaTag = (selector: string, content: string) => {
+            const element = document.querySelector(selector) as HTMLMetaElement | null;
+            if (element) {
+                element.content = content;
+            }
+        };
+
+        const generateKeywords = (title: string): string => {
+            const commonWords = new Set(['a', 'an', 'the', 'in', 'on', 'for', 'with', 'how', 'to', 'and', 'at', 'is', 'of', 'via', 'other', 'channels']);
+            const titleWords = title.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/);
+            const keywords = titleWords.filter(word => !commonWords.has(word) && word.length > 2);
+            return ['coupony', ...new Set(keywords)].join(', ');
+        };
+
+        const applyMeta = (meta: Partial<typeof defaultMeta>) => {
+            document.title = meta.title || defaultMeta.title;
+            updateMetaTag('meta[name="description"]', meta.description || defaultMeta.description);
+            updateMetaTag('meta[name="keywords"]', meta.keywords || defaultMeta.keywords);
+            updateMetaTag('meta[property="og:title"]', meta.ogTitle || defaultMeta.ogTitle);
+            updateMetaTag('meta[property="og:description"]', meta.ogDescription || defaultMeta.ogDescription);
+            updateMetaTag('meta[property="og:image"]', meta.ogImage || defaultMeta.ogImage);
+            updateMetaTag('meta[name="twitter:title"]', meta.twitterTitle || defaultMeta.twitterTitle);
+            updateMetaTag('meta[name="twitter:description"]', meta.twitterDescription || defaultMeta.twitterDescription);
+            updateMetaTag('meta[name="twitter:image"]', meta.twitterImage || defaultMeta.twitterImage);
+            updateMetaTag('meta[property="og:url"]', window.location.href);
+        };
+
+        const slug = currentPath.startsWith('/blogs/') ? currentPath.substring('/blogs/'.length) : null;
+        const post = slug ? blogPosts.find(p => p.slug === slug) : null;
+        
+        if (post) {
+            const newTitle = `${post.title} | Coupony`;
+            applyMeta({
+                title: newTitle,
+                description: post.excerpt,
+                keywords: generateKeywords(post.title),
+                ogTitle: newTitle,
+                ogDescription: post.excerpt,
+                ogImage: post.image,
+                twitterTitle: newTitle,
+                twitterDescription: post.excerpt,
+                twitterImage: post.image
+            });
+        } else if (currentPath === '/blogs') {
+             applyMeta({
+                title: 'The Coupony Blog | Tips, Tricks, and Savings',
+                description: 'Explore The Coupony Blog for the latest tips, tricks, and reviews to help you shop smarter and save more.',
+            });
+        } else if (currentPath === '/about') {
+             applyMeta({
+                title: 'About Coupony | Your Trusted Source for Deals',
+                description: "Learn about Coupony's mission to help you save money and shop smarter with the best and most reliable coupon codes online.",
+            });
+        } else {
+            applyMeta(defaultMeta);
+        }
+
+    }, [currentPath]);
+
     // --- HANDLERS ---
     const handleRevealAndCopy = (code: string) => {
         setRevealedCodes(prev => new Set(prev).add(code));
